@@ -746,6 +746,11 @@ header{
     background: rgba(217, 217, 217, 0.24);
     transition: .3s;
 }
+.section7-choose-block__main:hover{
+    background: #333;
+    color: #FFF;
+    transition: .3s;
+}
 .section7-choose__main{
     display: flex;
     gap: 24px;
