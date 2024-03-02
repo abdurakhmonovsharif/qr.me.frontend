@@ -36,16 +36,18 @@ export const Header = () => {
               <img src={Logo} alt="logo-img" />
             </Link>
             <ul>
-              {navbarList.map((item) => (
-                <li>
+              {navbarList.map((item, i) => (
+                <li key={i}>
                   <div className="dropdown">
                     <button className="dropbtn">
                       <Link to={item.path}> {item.label}</Link>
                       {item.icon}
                     </button>
                     <div className="dropdown-content">
-                      {item.drop?.map((el) => (
-                        <Link to={"/"}>{el}</Link>
+                      {item.drop?.map((el, i) => (
+                        <Link to={"/"} key={i}>
+                          {el}
+                        </Link>
                       ))}
                     </div>
                   </div>

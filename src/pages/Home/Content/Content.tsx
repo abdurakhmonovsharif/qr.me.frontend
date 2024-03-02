@@ -11,36 +11,12 @@ import Person from "../../../assets/img/material-symbols_group-add-outline-round
 
 export const Content = () => {
   const content = [
-    {
-      icon: <Section3_icon3 />,
-      title: "Content authoring made easy",
-      body: "Quickly create learning experiences with a simple interface designed by instructional designers",
-    },
-    {
-      icon: <img src={Person} />,
-      title: "Content authoring made easy",
-      body: "Quickly create learning experiences with a simple interface designed by instructional designers",
-    },
-    {
-      icon: <Section3_icon4 />,
-      title: "Content authoring made easy",
-      body: "Quickly create learning experiences with a simple interface designed by instructional designers",
-    },
-    {
-      icon: <Section3_icon5 />,
-      title: "Content authoring made easy",
-      body: "Quickly create learning experiences with a simple interface designed by instructional designers",
-    },
-    {
-      icon: <Section3_icon6 />,
-      title: "Content authoring made easy",
-      body: "Quickly create learning experiences with a simple interface designed by instructional designers",
-    },
-    {
-      icon: <Section3_icon7 />,
-      title: "Content authoring made easy",
-      body: "Quickly create learning experiences with a simple interface designed by instructional designers",
-    },
+    { icon: <Section3_icon3 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
+    { icon: <img src={Person} />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
+    { icon: <Section3_icon4 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
+    { icon: <Section3_icon5 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
+    { icon: <Section3_icon6 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
+    { icon: <Section3_icon7 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
   ];
   return (
     <section className="section3__main">
@@ -55,14 +31,16 @@ export const Content = () => {
           </p>
         </div>
         <div className="section3-container__main">
-          {content.map((item) => (
-            <div className="section3-container-block__main">
+          {content.map((item, i) => (
+            <div className="section3-container-block__main" key={i}>
               <div className="section3-container-block-parent__main">
                 <div className="section3-container-block-ellipse__main">
                   {item.icon}
                 </div>
               </div>
-              <h3>{item.title}</h3>
+              <h3 className="font-semibold leading-7 w-[284px]">
+                {item.title}
+              </h3>
               <p>
                 Quickly create learning experiences with a simple interface
                 designed by instructional designers

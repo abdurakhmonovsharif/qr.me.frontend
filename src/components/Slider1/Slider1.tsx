@@ -1,6 +1,7 @@
 import Crown from "../../assets/img/crown.svg";
 import Rectangle from "../../assets/img/Rectangle 613.png";
 import { Section5_icon } from "../../utils/icons";
+
 export const Slider1 = () => {
   const slider1 = [
     {
@@ -19,10 +20,9 @@ export const Slider1 = () => {
       img: Rectangle,
       label: "Get up and running,fast!",
       text: "Seamlessly deploy Gnowbe in your organization to create onboarding, enablement and training programs in minutes, without coding, special ...",
-      btn: "Explore",
     },
   ];
-  
+
   return (
     <section className="section5__main">
       <div className="container">
@@ -35,17 +35,16 @@ export const Slider1 = () => {
         </div>
         <div className="swiper mySwiper1">
           <div className="swiper-wrapper">
-            <div className="swiper-slide mySwiper1-slide">
-              {slider1.map((item) => (
-                <div className="section5-block__main">
+            <div className="swiper-slide mySwiper1-slide flex gap-6 justify-between">
+              {slider1.map((item, i) => (
+                <div className="section5-block__main" key={i}>
                   <img src={item.img} alt="img" />
                   <div className="section5-block-text__main">
                     <h3>
                       {item.label}
-                      <br /> fast!
                     </h3>
                     <p>{item.text}</p>
-                    <button>{item.btn}</button>
+                    <a>Explore</a>
                   </div>
                 </div>
               ))}

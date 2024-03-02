@@ -37,9 +37,9 @@ export const Slider2 = () => {
         </div>
         <div className="swiper mySwiper2">
           <div className="swiper-wrapper">
-            <div className="swiper-slide mySwiper2-slide">
-              {slider2.map((item) => (
-                <div className="section6-block__main">
+            <div className="swiper-slide mySwiper2-slide flex justify-between">
+              {slider2.map((item, i) => (
+                <div className="section6-block__main" key={i}>
                   <div className="section6-block-content__main">
                     <p>{item.body}</p>
                   </div>

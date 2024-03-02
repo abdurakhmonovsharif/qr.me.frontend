@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     box-sizing: border-box;
 }
@@ -10,10 +14,12 @@ html, body {
     height: 100%;
     scroll-behavior: smooth;
 }
+
 body{
     overflow-x: clip;
     font-family: 'Neue Haas Unica',  sans-serif;
 }
+
 section{
     position: relative;
 }
@@ -338,6 +344,12 @@ button:hover{
     border-radius: 8px;
     background: #5EC3C5;
 }
+.btn-get-start:hover{
+    border: 1.5px solid #5EC3C5;
+    background: rgba(94, 195, 197, 0.08);
+    color: #5EC3C5;
+}
+
 header{
     position: fixed;
     width: 100%;
@@ -406,6 +418,10 @@ header{
     height: 56px;
     border: 1.5px solid #5EC3C5;
     background: rgba(94, 195, 197, 0.08);
+}
+.btn-book-a-demo:hover{
+    color: #FFF;
+    background: #5EC3C5;
 }
 .section1-container-bottom__main{
     display: flex;
@@ -1550,7 +1566,7 @@ header{
     display: none;
 }
 .section-container-left__cart-catalog img{
-    width: 612px;
+    max-width: 612px;
     height: 536px;
     object-fit: cover;
     border-radius: 8px;

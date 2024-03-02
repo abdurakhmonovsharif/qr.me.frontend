@@ -9,6 +9,8 @@ import Logo5 from "../../../assets/img/logo5.png";
 import Logo6 from "../../../assets/img/logo6.png";
 import Logo7 from "../../../assets/img/logo7.png";
 import { GreyBall_icon, Hero_icon } from "../../../utils/icons";
+import { GetStarted } from "../../../components/Button/Started";
+import { BookDemo } from "../../../components/Button/Book";
 
 export const Hero = () => {
   return (
@@ -31,12 +33,8 @@ export const Hero = () => {
                 tool that transforms learning experiences for your teams
               </p>
               <div className="section1-container-left-btns__main">
-                <button type="button" className="btn-get-start">
-                  Get Started
-                </button>
-                <button className="btn-book-a-demo" type="button">
-                  Book a Demo
-                </button>
+               <GetStarted/>
+                <BookDemo/>
               </div>
               <div className="section1-container-bottom__main">
                 <Hero_icon />
