@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
-import { Basket_icon1, Search_icon } from "../../../utils/icons"
-import { catalogData } from "../../../data/catalog";
-import { filter, filter2 } from "../../../data/catalog";
+import { Basket_icon1, Search_icon } from "../../utils/icons"
+import { catalogData } from "../../data/catalog";
+import { filter, filter2 } from "../../data/catalog";
 
-export const LeftList = () => {
+export const Catalog = () => {
     const category = [
         { path: "", name: "Все", icon: <Basket_icon1 /> },
         { path: "", name: "Категория 1", icon: <Basket_icon1 /> },

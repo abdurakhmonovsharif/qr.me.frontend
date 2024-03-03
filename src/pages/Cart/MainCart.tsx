@@ -1,6 +1,6 @@
-import { QRmessage } from "../../components/QRMessage/QRMessage"
+import { QRmessage } from "../../components/QRMessage";
 import { CartIntro } from "./Intro/CartIntro"
-import { Products } from "./Products/Products"
+import { Products } from "./Products";
 
 export const Cart = () => {
     return <main>

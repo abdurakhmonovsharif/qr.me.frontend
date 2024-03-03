@@ -1,9 +1,9 @@
-import { QRmessage } from "../../components/QRMessage/QRMessage"
-import { LeftList } from "./Catalog/LeftList"
+import { QRmessage } from "../../components/QRMessage"
+import { Catalog } from "./Catalog"
 
 export const MainCatalog = () => {
     return <main>
-        <LeftList />
+        <Catalog />
         <QRmessage />
     </main>
 }

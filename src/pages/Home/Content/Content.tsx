@@ -12,7 +12,7 @@ import Person from "../../../assets/img/material-symbols_group-add-outline-round
 export const Content = () => {
   const content = [
     { icon: <Section3_icon3 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
-    { icon: Person, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
+    { icon: <img src={Person} alt="img" />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
     { icon: <Section3_icon4 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
     { icon: <Section3_icon5 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },
     { icon: <Section3_icon6 />, title: "Content authoring made easy", body: "Quickly create learning experiences with a simple interface designed by instructional designers", },

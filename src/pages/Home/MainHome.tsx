@@ -2,16 +2,16 @@ import React from "react";
 import "../../style/style.css";
 import "../../font/stylesheet.css";
 import { Outlet } from "react-router-dom";
-import { Header } from "../../layout/Header/Header";
-import { Footer } from "../../layout/Footer/Footer";
-import { Hero } from "./Hero/Hero";
-import { Content } from "./Content/Content";
-import { Scan } from "./Scan/Scan";
-import { Slider1 } from "../../components/Slider1/Slider1";
-import { Slider2 } from "../../components/Slider2/Slider2";
-import { MicroLearning } from "./Microlearning/Microlearning";
-import { Categories } from "../../components/Categories/Categories";
-import { QRmessage } from "../../components/QRMessage/QRMessage";
+import { Header } from "../../layout/Header";
+import { Footer } from "../../layout/Footer";
+import { Hero } from "./Hero";
+import { Content } from "./Content";
+import { Scan } from "./Scan";
+import { Slider1 } from "../../components/Slider1";
+import { Slider2 } from "../../components/Slider2";
+import { MicroLearning } from "./Microlearning";
+import { Categories } from "../../components/Categories";
+import { QRmessage } from "../../components/QRMessage";
 
 export const DefaultComponent = () => {
   return (
