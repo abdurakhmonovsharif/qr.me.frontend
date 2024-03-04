@@ -68,3 +68,36 @@ export const Constructon_icon6 = () => <svg xmlns="http://www.w3.org/2000/svg" w
     <circle cx={9} cy={9} r="7.5" stroke="#ED8054" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M9.00001 12.75C9.23013 12.75 9.41668 12.5635 9.41668 12.3334C9.41668 12.1032 9.23013 11.9167 9.00001 11.9167C8.76989 11.9167 8.58334 12.1032 8.58334 12.3334C8.58334 12.5635 8.76989 12.75 9.00001 12.75Z" fill="#ED8054" stroke="#ED8054" strokeLinecap="round" strokeLinejoin="round" />
 </svg>
+
+/////////////////////////// Order page //////////////////////////
+
+export const Order_icon = () => <svg xmlns="http://www.w3.org/2000/svg" width={16} height={14} viewBox="0 0 16 14" fill="none">
+    <path d="M6.49085 12.2083L1.125 6.99992M1.125 6.99992L6.49085 1.79159M1.125 6.99992H14.875" stroke="#22252D" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+
+export const Order_icon2 = () => <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
+    <path d="M3 9H21" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M9.57 13H7" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M18 19H6C4.343 19 3 17.657 3 16V8C3 6.343 4.343 5 6 5H18C19.657 5 21 6.343 21 8V16C21 17.657 19.657 19 18 19Z" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+
+export const Order_icon3 = () => <svg xmlns="http://www.w3.org/2000/svg" width={25} height={24} viewBox="0 0 25 24" fill="none">
+    <path d="M16.9502 7H8.9502" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M17.0802 11H8.9502" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M4.9502 19.191V4C4.9502 3.448 5.3982 3 5.9502 3H19.9502C20.5022 3 20.9502 3.448 20.9502 4V19.191C20.9502 19.563 20.5592 19.804 20.2262 19.638L18.2832 18.666L15.8402 19.888C15.6992 19.958 15.5342 19.958 15.3932 19.888L12.9502 18.667L10.5072 19.889C10.3662 19.959 10.2012 19.959 10.0602 19.889L7.6172 18.667L5.6742 19.639C5.3412 19.804 4.9502 19.563 4.9502 19.191Z" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13.9502 15H8.9502" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+
+export const Order_icon4 = () => <svg xmlns="http://www.w3.org/2000/svg" width={25} height={24} viewBox="0 0 25 24" fill="none">
+    <path d="M17.9502 20H7.9502V7H17.9502V20" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10.9502 10H14.9502" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14.9502 13H10.9502" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10.9502 16H13.9502" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M17.9502 11H19.9502C21.0552 11 21.9502 10.105 21.9502 9V5C21.9502 3.895 21.0552 3 19.9502 3H5.9502C4.8452 3 3.9502 3.895 3.9502 5V9C3.9502 10.105 4.8452 11 5.9502 11H7.9502" stroke="#1B1D1F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+
+///////////////////////
+
+export const QR_icon = () => <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} viewBox="0 0 30 30" fill="none">
+    <path fillRule="evenodd" clipRule="evenodd" d="M0.0439453 0.0219727H10.9399V10.874H0.0439453V0.0219727ZM27.2217 27.2437H30V29.978H27.2217V27.2437ZM21.8823 27.2388H24.6606V29.8437H21.8823H21.8799H19.104V24.5166H21.7944V21.8164H24.5312V16.4331H27.3096V19.0796H29.9561V21.814H27.3096V24.5483H24.5728H24.5312H21.8823V27.2388ZM13.6328 21.7725H16.3232V19.0381H13.7207V16.3037H16.3232V13.5693H13.6768V16.3037H10.896V13.5693H13.6304V5.44922H16.4087V13.5669H19.0991V16.3013H21.7456V13.5669H24.5239V16.3013H21.8823V19.0356H19.104V24.4189H16.4111V29.8462H13.6328V21.7725ZM27.1753 13.5669H29.9536V16.3013H27.1753V13.5669ZM5.47119 13.5669H8.24951V16.3013H5.47119V13.5669ZM0.0439453 13.5669H2.82227V16.3013H0.0439453V13.5669ZM13.6328 0.0219727H16.4111V2.75635H13.6328V0.0219727ZM0 19.0796H10.896V29.9316H0V19.0796ZM2.64648 21.7163H8.24951V27.2974H2.64648V21.7163ZM19.0576 0.0219727H29.9536V10.874H19.0576V0.0219727ZM21.7065 2.65869H27.3096V8.23975H21.7065V2.65869ZM2.69043 2.65869H8.29346V8.23975H2.69043V2.65869Z" fill="white" />
+</svg>

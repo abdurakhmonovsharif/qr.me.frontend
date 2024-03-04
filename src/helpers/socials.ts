@@ -29,3 +29,16 @@ export const socials = [
     { path: "", icon: Img13 },
     { path: "", icon: Img14 },
 ]
+
+export const socials2 = [
+    { path: "", icon: Img1 },
+    { path: "", icon: Img2 },
+    { path: "", icon: Img3 },
+    { path: "", icon: Img4 },
+    { path: "", icon: Img5 },
+    { path: "", icon: Img6 },
+    { path: "", icon: Img7 },
+    { path: "", icon: Img8 },
+    { path: "", icon: Img9 },
+    { path: "", icon: Img10 }
+]
