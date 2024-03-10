@@ -43,19 +43,6 @@ export const Contact = () => {
             throw error;
         }
     };
-    const getLinkImage = async (icon: string | undefined) => {
-        try {
-            if (icon) {
-                const base64SVG = await fetchSVG(icon);
-                return base64SVG as string;
-            } else {
-                return '';
-            }
-        } catch (error) {
-            console.error('Error getting link image:', error);
-            return '';
-        }
-    }
     return <React.Fragment>
         <h3 className="head-h3">Добавьте контактные данные</h3>
         <div className="constructor2-mini-inputs__section">

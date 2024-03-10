@@ -2,7 +2,7 @@ import React from "react"
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import iphone from '../../../assets/img/iPhone X2.png'
-import { useCreatePageMutation, usePublishPageMutation } from "../../../redux/api/page/page.api";
+import { useCreatePageMutation } from "../../../redux/api/page/page.api";
 import { useUploadFileMutation } from "../../../redux/api/upload/upload.api";
 export const ResultViwer = () => {
     const html = useSelector((state: RootState) => state.html);
@@ -26,7 +26,8 @@ export const ResultViwer = () => {
                     let site_link = url.data.fileURL;
                     const newPage = { ...{ ...page, site_link, userId: user, themeId: theme.id, sections: [...sections], contact: { ...contact }, links: [...link] } }
                     const data = await createSite(newPage);
-                    
+                    localStorage.setItem("site", JSON.stringify(data));
+                    alert("site published check localStorage");
                 }
             }
         } catch (error) {

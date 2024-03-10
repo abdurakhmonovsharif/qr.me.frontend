@@ -12,7 +12,7 @@ import { Options } from "./Options";
 import React, { ChangeEvent, useEffect, useRef } from "react";
 import { useUploadFileMutation } from "../../redux/api/upload/upload.api";
 import { setPage } from "../../redux/reducers/page.reducer";
-const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, sections, site_link, site_name, theme }) => {
+const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, sections, site_name, theme }) => {
     return <html lang="en">
         <head>
             <meta charSet="UTF-8" />
@@ -277,6 +277,7 @@ const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, 
             <header>
                 <nav className="navbar bg-body-tertiary">
                     <div className="container-fluid container_padding">
+
                         <span className="navbar-brand">
                             <img
                                 src={logo}
