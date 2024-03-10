@@ -26,7 +26,7 @@ export const ResultViwer = () => {
                     let site_link = url.data.fileURL;
                     const newPage = { ...{ ...page, site_link, userId: user, themeId: theme.id, sections: [...sections], contact: { ...contact }, links: [...link] } }
                     const data = await createSite(newPage);
-                    console.log(data);
+                    
                 }
             }
         } catch (error) {
