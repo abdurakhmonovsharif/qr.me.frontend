@@ -5,10 +5,9 @@ import { MainBasket } from "./pages/Basket";
 import { Error } from "./pages/Error";
 import { Cart } from "./pages/Cart";
 import { MainCatalog } from "./pages/Catalog/Main.catalog";
-import { Constructor } from "./pages/Constructor";
-import { Constructor2 } from "./pages/Constructor2";
+import { Themes } from "./pages/Themes";
+import { ConstructorSite } from "./pages/Constructor";
 import { Order } from "./pages/Order";
-import { Sample } from "./pages/Sample";
 
 const Route = () => {
   const routes = createBrowserRouter([
@@ -20,13 +19,12 @@ const Route = () => {
         { path: "/basket", element: <MainBasket /> },
         { path: "/cart", element: <Cart /> },
         { path: "/catalog", element: <MainCatalog /> },
-        { path: "/constructor", element: <Constructor /> },
-        { path: "/constructor2", element: <Constructor2 /> },
+        { path: "/themes", element: <Themes /> },
+        { path: "/create_page", element: <ConstructorSite /> },
         { path: "/order", element: <Order /> },
         { path: "*", element: <Error /> },
       ],
     },
-    { path: "/sample", element: <Sample /> },
   ]);
 
   return <RouterProvider router={routes} />;

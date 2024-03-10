@@ -48,6 +48,44 @@ export const Constructon_icon2 = () => <svg xmlns="http://www.w3.org/2000/svg" w
     <path d="M8.06 20.72H15.94" stroke="#111827" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
 </svg>
 
+export const Upload_icon = () => <svg width={48} height={48} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="icons-upload">
+        <g clipPath="url(#clip0_4603_67681)">
+            <rect width={48} height={48} rx={24} fill="#ED8054" />
+            <path id="gradient" opacity="0.2" d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="url(#paint0_linear_4603_67681)" />
+            <rect id="icon" opacity="0.5" x={14} y={21} width={20} height={13} rx={5} fill="#EDEFFF" />
+            <path id="arrow" d="M27.8801 17.5675L24.5301 14.2175C24.2401 13.9275 23.7601 13.9275 23.4701 14.2175L20.1201 17.5675C19.8301 17.8575 19.8301 18.3375 20.1201 18.6275C20.4101 18.9175 20.8901 18.9175 21.1801 18.6275L23.2501 16.5575V27.2475C23.2501 27.6575 23.5901 27.9975 24.0001 27.9975C24.4101 27.9975 24.7501 27.6575 24.7501 27.2475V16.5575L26.8201 18.6275C26.9701 18.7775 27.1601 18.8475 27.3501 18.8475C27.5401 18.8475 27.7301 18.7775 27.8801 18.6275C28.1801 18.3375 28.1801 17.8675 27.8801 17.5675Z" fill="white" />
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="paint0_linear_4603_67681" x1={24} y1={0} x2={24} y2={48} gradientUnits="userSpaceOnUse">
+            <stop stopColor="white" />
+            <stop offset={1} stopColor="white" stopOpacity={0} />
+        </linearGradient>
+        <clipPath id="clip0_4603_67681">
+            <rect width={48} height={48} rx={24} fill="white" />
+        </clipPath>
+    </defs>
+</svg>
+export const Upload_mini_icon = () => <svg width={35} height={35} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="icons-upload">
+        <g clipPath="url(#clip0_4603_67681)">
+            <rect width={48} height={48} rx={24} fill="#ED8054" />
+            <path id="gradient" opacity="0.2" d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="url(#paint0_linear_4603_67681)" />
+            <rect id="icon" opacity="0.5" x={14} y={21} width={20} height={13} rx={5} fill="#EDEFFF" />
+            <path id="arrow" d="M27.8801 17.5675L24.5301 14.2175C24.2401 13.9275 23.7601 13.9275 23.4701 14.2175L20.1201 17.5675C19.8301 17.8575 19.8301 18.3375 20.1201 18.6275C20.4101 18.9175 20.8901 18.9175 21.1801 18.6275L23.2501 16.5575V27.2475C23.2501 27.6575 23.5901 27.9975 24.0001 27.9975C24.4101 27.9975 24.7501 27.6575 24.7501 27.2475V16.5575L26.8201 18.6275C26.9701 18.7775 27.1601 18.8475 27.3501 18.8475C27.5401 18.8475 27.7301 18.7775 27.8801 18.6275C28.1801 18.3375 28.1801 17.8675 27.8801 17.5675Z" fill="white" />
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="paint0_linear_4603_67681" x1={24} y1={0} x2={24} y2={48} gradientUnits="userSpaceOnUse">
+            <stop stopColor="white" />
+            <stop offset={1} stopColor="white" stopOpacity={0} />
+        </linearGradient>
+        <clipPath id="clip0_4603_67681">
+            <rect width={48} height={48} rx={24} fill="white" />
+        </clipPath>
+    </defs>
+</svg>
 export const Constructon_icon3 = () => <svg xmlns="http://www.w3.org/2000/svg" width={25} height={24} viewBox="0 0 25 24" fill="none">
     <path d="M22.31 3.94012C20.77 7.78012 16.91 13.0001 13.68 15.5901L11.71 17.1701C11.46 17.3501 11.21 17.5101 10.93 17.6201C10.93 17.4401 10.92 17.2401 10.89 17.0501C10.78 16.2101 10.4 15.4301 9.73002 14.7601C9.05002 14.0801 8.22002 13.6801 7.37002 13.5701C7.17002 13.5601 6.97002 13.5401 6.77002 13.5601C6.88002 13.2501 7.05002 12.9601 7.26002 12.7201L8.82002 10.7501C11.4 7.52012 16.64 3.64012 20.47 2.11012C21.06 1.89012 21.63 2.05012 21.99 2.42012C22.37 2.79012 22.55 3.36012 22.31 3.94012Z" stroke="#111827" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M10.93 17.6201C10.93 18.7201 10.51 19.77 9.72003 20.57C9.11003 21.18 8.28003 21.6001 7.29003 21.7301L4.83003 22.0001C3.49003 22.1501 2.34003 21.01 2.50003 19.65L2.77003 17.1901C3.01003 15.0001 4.84003 13.6001 6.78003 13.5601C6.98003 13.5501 7.19003 13.56 7.38003 13.57C8.23003 13.68 9.06003 14.0701 9.74003 14.7601C10.41 15.4301 10.79 16.21 10.9 17.05C10.91 17.24 10.93 17.4301 10.93 17.6201Z" stroke="#111827" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

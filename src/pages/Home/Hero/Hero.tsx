@@ -11,6 +11,7 @@ import Logo7 from "../../../assets/img/logo7.png";
 import { GreyBall_icon, Hero_icon } from "../../../utils/icons";
 import { GetStarted } from "../../../components/Button/Started";
 import { BookDemo } from "../../../components/Button/Book";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -33,8 +34,10 @@ export const Hero = () => {
                 tool that transforms learning experiences for your teams
               </p>
               <div className="section1-container-left-btns__main">
-               <GetStarted/>
-                <BookDemo/>
+                <Link to={"/themes"}>
+                  <GetStarted />
+                </Link>
+                <BookDemo />
               </div>
               <div className="section1-container-bottom__main">
                 <Hero_icon />

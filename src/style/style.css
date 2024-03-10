@@ -85,9 +85,7 @@ textarea {
 textarea {
   resize: vertical;
 }
-textarea {
-  resize: horizontal;
-}
+
 button:active,
 button:focus {
   outline: none;
@@ -1139,9 +1137,10 @@ header {
   left: 15px;
   border-radius: 20px 20px 0 0;
 }
-.section-container-block-text__constructor1 h3 {
+.section-container-block-text__constructor1 h5 {
   color: #111827;
-  font-size: 24px;
+  font-size: 16px;
+  margin: 16px 0;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
@@ -1172,7 +1171,9 @@ header {
   gap: 31px;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 50px;
 }
+
 footer {
   margin-top: 80px;
 }
@@ -2439,6 +2440,22 @@ header {
   line-height: normal;
   padding-bottom: 35px;
 }
+.head-p {
+  color: #111827;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-top: 12px;
+}
+.head-h3 {
+  color: #111827;
+  font-size: 24px;
+  padding-bottom: 35px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
 .constructor2-select__section p,
 .constructor2-input__section p {
   color: #111827;
@@ -2446,6 +2463,7 @@ header {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  padding-top: 12px;
   padding-bottom: 12px;
 }
 .constructor2-input__section p {
@@ -2461,7 +2479,7 @@ header {
   font-style: normal;
   font-weight: 500;
   line-height: 24px; /* 150% */
-  padding: 20px;
+  padding-left: 20px;
   width: 100%;
   height: 100%;
   -webkit-appearance: none;
@@ -2487,6 +2505,19 @@ header {
   right: 20px;
   top: 28px;
 }
+.constructor2-input {
+  border-radius: 12px;
+  border: 2px solid #e7e7e1;
+  background: #fcfcf9;
+  padding: 20px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  width: 100%;
+  height: 64px;
+  margin-top: 7px;
+}
 .constructor2-input__section input {
   border-radius: 12px;
   border: 2px solid #e7e7e1;
@@ -2498,6 +2529,7 @@ header {
   line-height: 24px; /* 150% */
   width: 100%;
   height: 64px;
+  margin-top: 7px;
 }
 .constructor2-input__section {
   margin-top: 30px;
@@ -2593,6 +2625,19 @@ header {
   height: 188px;
   width: 100%;
 }
+.text-area {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  border: 2px solid #e7e7e1;
+  background: #fcfcf9;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  height: 188px;
+  width: 100%;
+}
 .constructor2-textarea__section {
   padding-top: 30px;
   padding-bottom: 35px;
@@ -2620,6 +2665,9 @@ header {
   font-weight: 800;
   line-height: normal;
 }
+.my_clip_path{
+  clip-path: polygon(0 0, 23% 0, 23% 4.1%, 77% 4%, 77% 0, 100% 0, 100% 85%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0 100%);
+}
 .constructor2-mini-inputs-block__section input {
   font-size: 16px;
   font-style: normal;
@@ -2628,15 +2676,16 @@ header {
   border-radius: 12px;
   border: 2px solid #e7e7e1;
   background: #fcfcf9;
-  width: 307px;
   height: 64px;
+  width: 100%;
   padding: 20px;
 }
 .constructor2-mini-inputs__section {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   gap: 25px;
 }
+
 .constructor2-mini-inputs-block__section p {
   padding-bottom: 12px;
   color: #111827;
@@ -2677,10 +2726,12 @@ header {
   padding: 20px;
   padding-left: 50px;
 }
-.constructor2-input-social-block__section img {
-  width: 20px;
+.constructor2-input-social-block__section .input_icon {
+  width: 30px;
+  height: 30px;
   position: absolute;
-  left: 20px;
+  left: 15px;
+  object-fit: contain;
   top: 21px;
 }
 .constructor2-input-social__section {
@@ -2706,10 +2757,11 @@ header {
 }
 .constructor2-demo-content {
   position: absolute;
+  padding: 23px;
   width: 435px;
   height: 870px;
   left: 0;
-  z-index: -1;
+  z-index: 999;
 }
 .constructor2-demo {
   overflow: hidden;
@@ -2757,6 +2809,22 @@ header {
   letter-spacing: 0.18px;
 }
 .btn-demo-mob {
+  width: 100%;
+  border-radius: 8px;
+  background: #ed8054;
+  height: 56px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 137.5% */
+  letter-spacing: 0.16px;
+  margin-top: 30px;
+}
+.add-slide-btn {
   width: 100%;
   border-radius: 8px;
   background: #ed8054;
