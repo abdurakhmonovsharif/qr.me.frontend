@@ -49,6 +49,46 @@ export const ResultViwer = () => {
                 <span>1,200 рублей.</span>
                 <button type="button" className="btn-demo-constructor openModalDemo2" onClick={onPublish}>Оплатить и опубликовать</button>
             </div>
+            <div  className="modal-demo2" data-modal="one">
+                <div className="modal-content-demo2">
+                    <div className="modal-demo2-content">
+                        <h3>Страница создана!</h3>
+                        <p>
+                            Please make sure to test scan your QR before printing for production
+                        </p>
+                        <div className="constructor2-input__section constructor2-input__modal">
+                            <p>Ваша ссылка на страницу</p>
+                            <input type="text" placeholder="https://linko.page/s5r9xeeiknkg" />
+                        </div>
+                        <div className="constructor2-input__section constructor2-input__modal">
+                            <p>Embed Code</p>
+                            <input type="text" placeholder="<iframe src='https://linko.page/s5r9xeeiknkg' style='height:667px;width:375px;border:none;'></iframe>" />
+                        </div>
+                        {/* <div className="modal-demo2-content-social">
+                            <p>Share this QR code on social media</p>
+                            <div className="modal-demo2-content-social-container">
+                                <a href="" className="modal-demo2-content-social-container-active">
+                                    <img src="/img/socials111.svg" alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="/img/socials2.svg" alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="/img/socials3.svg" alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="/img/socials4.svg" alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="/img/socials5.svg" alt="" />
+                                </a>
+                            </div>
+                        </div> */}
+                        <button className="btn-continue-demo" type="button">Перейти</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </React.Fragment>
 }
