@@ -9,7 +9,7 @@ export const ThemeCard: React.FC<Theme> = ({ color, background_color, font_famil
             <div className="section-container-block-img-part__constructor1">
                 <img src={Iphone} alt="img" />
                 <div className="section-container-block-img-color__constructor1  text-center pt-3" style={{ background: background_color }} >
-                    <span style={{ color }} className={` font-medium`}>Пример текста</span>
+                    <span style={{ color, fontFamily: font_family }} className={` font-medium `}>Пример текста</span>
                 </div>
             </div>
         </div>

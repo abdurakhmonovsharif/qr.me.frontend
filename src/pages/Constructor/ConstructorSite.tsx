@@ -41,7 +41,7 @@ const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, 
         <style>
             {`
             * {
-               ${theme.font_family}
+            font-family:${theme.font_family};
       }
             .sample_body {
                 background-color: ${theme.background_color} !important;
@@ -440,7 +440,6 @@ export const ConstructorSite = () => {
     }, [])
     const onAddSection = () => {
         dispatch(addSection());
-        console.log(sections);
     }
     const onRender = async () => {
         let theme_from_localStorage = localStorage.getItem("theme");
@@ -450,6 +449,8 @@ export const ConstructorSite = () => {
                 <Sample {...{ ...page, theme, sections: [...sections], contact: { ...contact }, links: [...link] }} />
             );
             dispatch(setHtml(html_code))
+        } else {
+            alert("theme is not selected!")
         }
     }
     const logoInputsChange = async (e: ChangeEvent<HTMLInputElement>, type: string) => {
