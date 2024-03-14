@@ -42,7 +42,7 @@ export const ResultViwer = () => {
 
     return <React.Fragment>
         <div className="constructor2-container-right-parent__section ">
-            <div className="constructor2-container-right__section sticky top-[108px]">
+            <div className="constructor2-container-right__section sticky top-[10px]">
                 <div className="constructor2-demo relative">
                     <div className="constructor2-demo-content absolute z-40 bg-[#F8F9FA]">
                         <img src={iphone} alt="#" className="absolute inset-0 -z-10" />

@@ -476,23 +476,6 @@ export const ConstructorSite = () => {
                 <Template />
                 <div className="constructor2-container__section">
                     <div className="constructor2-container-left__section">
-                        <h3 className="head-h3">Настройте главный экран</h3>
-                        <p className="head-p">Логотип</p>
-                        <div className="flex items-center gap-x-2">
-                            <input value={page.logo} onChange={(e) => logoInputsChange(e, "logo_url")} className="constructor2-input" type="text" placeholder="Логотип URL" />
-                            <label className="cursor-pointer" title="загрузить">
-                                <input ref={logoFileInputRef} onChange={(e) => logoInputsChange(e, "logo_file")} hidden type="file" accept="image/*" />
-                                <Upload_icon />
-                            </label>
-                        </div>
-                        <p className="head-p">Название сайта</p>
-                        <input value={page.site_name} onChange={(e) => dispatch(setPage({ value: e.target.value, field: "site_name" }))} className="constructor2-input" type="text" placeholder="Название сайта" />
-                        <p className="head-p">Описание</p>
-                        <input
-                            value={page.description}
-                            onChange={(e) => dispatch(setPage({ value: e.target.value, field: "description" }))}
-                            className="constructor2-input mb-4" type="text" placeholder="Описание" />
-                        <h3 className="head-h3 -mb-3">Настройте тело страницы</h3>
                         {sections.map((section, index) => <DinamicBlock key={index} {...section} index={index} />)}
                         <div className="constructor2-container-left-block__section">
                             {sections.length < 10 &&

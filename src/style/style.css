@@ -375,10 +375,8 @@ button:hover {
 }
 
 header {
-  position: fixed;
   width: 100%;
   background: #fff;
-  z-index: 99 !important;
 }
 .section1-container-left__main h1 {
   color: #333;
@@ -1079,7 +1077,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding-top: 137px;
+  padding-top: 13px;
   padding-bottom: 45px;
 }
 .breadcrumbs p {

@@ -44,7 +44,7 @@ export const Contact = () => {
         }
     };
     return <React.Fragment>
-        <h3 className="head-h3">Добавьте контактные данные</h3>
+        <h3 className="head-h3" id="text">Добавьте контактные данные</h3>
         <div className="constructor2-mini-inputs__section">
             <div className="constructor2-mini-inputs-block__section">
                 <p>ФИО</p>

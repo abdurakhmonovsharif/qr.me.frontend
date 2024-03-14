@@ -9,6 +9,12 @@ const sectionsSlice = createSlice({
         title: "",
         content: "",
         sliders: [{ imageURL: "", title: "" }],
+    }, {
+        type: "text",
+        imageURL: "",
+        title: "",
+        content: "",
+        sliders: [{ imageURL: "", title: "" }],
     }] as Section[],
     reducers: {
         setSectionType: (state, action: PayloadAction<{ index: number | undefined; type: string }>) => {
@@ -70,5 +76,5 @@ const sectionsSlice = createSlice({
     },
 });
 
-export const { clearSections, setSectionType, addSlider, deleteSlide, setSections, addSection,deleteBlock } = sectionsSlice.actions;
+export const { clearSections, setSectionType, addSlider, deleteSlide, setSections, addSection, deleteBlock } = sectionsSlice.actions;
 export default sectionsSlice.reducer;

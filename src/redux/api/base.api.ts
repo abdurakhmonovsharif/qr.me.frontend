@@ -1,1 +1,2 @@
-export const BASE_URL = "https://qr-me-backend.onrender.com/api/"
+export const BASE_URL = "http://localhost:8080/api/"
+// "https://qr-me-backend.onrender.com/api/"

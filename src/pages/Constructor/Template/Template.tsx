@@ -1,24 +1,27 @@
-import React, { useEffect } from "react"
-import { Link, useNavigate, useSearchParams } from "react-router-dom"
+import React, { useEffect, useRef } from "react"
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom"
 import { Basket_icon1, Constructon_icon, Constructon_icon2, Constructon_icon3 } from "../../../utils/icons"
 
 export const Template = () => {
-    const [searchParams] = useSearchParams();
+    const location = useLocation();
+    const lastHash = useRef("");
+
     useEffect(() => {
-        const template_type = searchParams.get("type");
-        if (template_type === null) {
-            navigate(`?type=site`)
+        if (location.hash) {
+            lastHash.current = location.hash.slice(1); // Safe hash for further use
         }
-    }, [])
-    const navigate = useNavigate();
+        if (lastHash.current && document.getElementById(lastHash.current)) {
+            document
+                .getElementById(lastHash.current)
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            lastHash.current = "";
+        }
+    }, [location]);
     const type = [
-        { path: "", icon: <Constructon_icon />, title: "Страница", type: "site" },
-        { path: "", icon: <Constructon_icon2 />, title: "Визитка", type: "cv" },
-        { path: "", icon: <Constructon_icon3 />, title: "Текст", type: "text" }
+        { path: "home", icon: <Constructon_icon />, title: "Страница", },
+        { path: "block", icon: <Constructon_icon2 />, title: "Визитка" },
+        { path: "text", icon: <Constructon_icon3 />, title: "Текст", }
     ]
-    const changeType = (type: string) => {
-        navigate(`?type=${type}`)
-    }
     return <React.Fragment>
         <div className="breadcrumbs">
             <Link to={"/"}>Главная</Link>
@@ -27,9 +30,12 @@ export const Template = () => {
         </div>
         <h1 className="constructor2-title__section">Редактируйте шаблон</h1>
         <div className="constructor2-top__section">
-            {type.map((item, i) => <button onClick={() => changeType(item.type)} key={i} className={item.type === searchParams.get("type") ? "constructor2-top-block-active__section constructor2-top-block__section" : "constructor2-top-block__section"}>
-                {item.icon}{item.title}
-            </button>)}
+            {type.map((item, i) => <Link className="w-full" to={`#${item.path}`}>
+                <button key={i} className={" constructor2-top-block__section"}>
+                    {item.icon}{item.title}
+                </button>
+            </Link>
+            )}
         </div>
     </React.Fragment >
 }

@@ -3,6 +3,7 @@ import "./style/style.css";
 import "./style/adaptive.css";
 
 function App() {
+  
   return <Route />
 }
 
