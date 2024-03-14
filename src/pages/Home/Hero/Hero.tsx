@@ -34,7 +34,7 @@ export const Hero = () => {
                 tool that transforms learning experiences for your teams
               </p>
               <div className="section1-container-left-btns__main">
-                <Link to={"/themes"}>
+                <Link to={"/create_page"}>
                   <GetStarted />
                 </Link>
                 <BookDemo />
