@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Basket_icon1, Constructon_icon, Constructon_icon2, Constructon_icon3 } from "../../../utils/icons"
 
 export const Template = () => {

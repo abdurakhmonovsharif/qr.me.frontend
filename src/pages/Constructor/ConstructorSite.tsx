@@ -6,11 +6,10 @@ import { RootState } from "../../redux/store";
 import { addSection } from "../../redux/reducers/sections.reducer";
 import ReactDOMServer from 'react-dom/server'
 import { setHtml } from "../../redux/reducers/html.reducer";
-import { Upload_icon } from "../../utils/icons";
 import { Contact } from "./Contact";
 import { Options } from "./Options";
-import React, { ChangeEvent, useEffect, useRef } from "react";
-import { useUploadFileMutation } from "../../redux/api/upload/upload.api";
+import React, {  useEffect } from "react";
+// import { useUploadFileMutation } from "../../redux/api/upload/upload.api";
 import { setPage } from "../../redux/reducers/page.reducer";
 const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, sections, site_name, theme }) => {
     return <html lang="en">
@@ -426,8 +425,8 @@ export const ConstructorSite = () => {
     const page = useSelector((state: RootState) => state.page);
     const contact = useSelector((state: RootState) => state.contact);
     const link = useSelector((state: RootState) => state.link);
-    const [uploadFile] = useUploadFileMutation();
-    const logoFileInputRef = useRef<HTMLInputElement>(null)
+    // const [uploadFile] = useUploadFileMutation();
+    // const logoFileInputRef = useRef<HTMLInputElement>(null)
     const dispatch = useDispatch();
     useEffect(() => {
         let theme_from_localStorage = localStorage.getItem("theme");
@@ -453,23 +452,23 @@ export const ConstructorSite = () => {
             alert("theme is not selected!")
         }
     }
-    const logoInputsChange = async (e: ChangeEvent<HTMLInputElement>, type: string) => {
-        if (type === "logo_file") {
-            const formData = new FormData();
-            if (e.target.files) {
-                formData.append("file", e.target.files[0]);
-                const data = await uploadFile(formData);
-                if ('data' in data && 'fileURL' in data.data) {
-                    dispatch(setPage({ value: data.data.fileURL, field: "logo" }));
-                    if (logoFileInputRef.current) {
-                        logoFileInputRef.current.value = '';
-                    }
-                }
-            }
-        } else if (type === "logo_url") {
-            dispatch(setPage({ value: e.target.value, field: "logo" }))
-        }
-    }
+    // const logoInputsChange = async (e: ChangeEvent<HTMLInputElement>, type: string) => {
+    //     if (type === "logo_file") {
+    //         const formData = new FormData();
+    //         if (e.target.files) {
+    //             formData.append("file", e.target.files[0]);
+    //             const data = await uploadFile(formData);
+    //             if ('data' in data && 'fileURL' in data.data) {
+    //                 dispatch(setPage({ value: data.data.fileURL, field: "logo" }));
+    //                 if (logoFileInputRef.current) {
+    //                     logoFileInputRef.current.value = '';
+    //                 }
+    //             }
+    //         }
+    //     } else if (type === "logo_url") {
+    //         dispatch(setPage({ value: e.target.value, field: "logo" }))
+    //     }
+    // }
     return <main>
         <section className="constructor2__section">
             <div className="container">
