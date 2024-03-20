@@ -1,9 +1,7 @@
 import React from "react"
-import { Link } from "react-router-dom"
-
 import Iphone from "../../assets/img/iPhone X.png";
 
-export const ThemeCard: React.FC<Theme> = ({ color, background_color, font_family, id }) => {
+export const ThemeCard: React.FC<Theme & { onSelectTheme: () => void }> = ({ color, background_color, font_family, id, onSelectTheme }) => {
     return <div className="section-container-block__constructor1" key={id}>
         <div className="section-container-block-img__constructor1">
             <div className="section-container-block-img-part__constructor1">
@@ -15,7 +13,7 @@ export const ThemeCard: React.FC<Theme> = ({ color, background_color, font_famil
         </div>
         <div className="section-container-block-text__constructor1">
             <h5>{font_family}</h5>
-            <Link to={"/create_page"}>Выбрать</Link>
+            <button onClick={onSelectTheme}>Выбрать</button>
         </div>
     </div>
 }

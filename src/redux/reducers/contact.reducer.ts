@@ -3,7 +3,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 const contactSlice = createSlice({
     name: "contact",
     initialState: {
-        address: "", email: "", fullname: "", map: "", phoneNumber: ""
+        address: "your address", email: "your email", fullname: "your fullname", map: "", phoneNumber: "your phone number"
     } as Contact,
     reducers: {
         setContact: (state, action: PayloadAction<{ value: string, field: keyof Contact }>) => {
@@ -11,7 +11,7 @@ const contactSlice = createSlice({
             state[field] = value;
             return state;
         },
-        clearContat: () => {
+        clearContact: () => {
             return {
                 address: "", email: "", fullname: "", map: "", phoneNumber: ""
             };
@@ -19,5 +19,5 @@ const contactSlice = createSlice({
     },
 });
 
-export const { clearContat,setContact} = contactSlice.actions;
+export const { clearContact, setContact } = contactSlice.actions;
 export default contactSlice.reducer;

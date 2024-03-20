@@ -5,11 +5,11 @@ export const auth = createApi({
     reducerPath: "authApi",
     baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
     endpoints: (builder) => ({
-        login: builder.mutation<String, Partial<User | null>>({
-            query: (user) => ({
+        login: builder.mutation<any, { password: string }>({
+            query: ({ password }) => ({
                 url: "auth/sign_in",
                 method: "POST",
-                body: user,
+                body: { password },
             }),
         }),
         register: builder.mutation<String, Partial<User>>({

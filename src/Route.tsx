@@ -8,6 +8,7 @@ import { MainCatalog } from "./pages/Catalog/Main.catalog";
 import { Themes } from "./pages/Themes";
 import { ConstructorSite } from "./pages/Constructor";
 import { Order } from "./pages/Order";
+import DinamicSite from "./pages/DinamicSite/DinamicSite";
 
 const Route = () => {
   const routes = createBrowserRouter([
@@ -25,6 +26,7 @@ const Route = () => {
         { path: "*", element: <Error /> },
       ],
     },
+    { path: "/ws/:link", element: <DinamicSite /> },
   ]);
 
   return <RouterProvider router={routes} />;

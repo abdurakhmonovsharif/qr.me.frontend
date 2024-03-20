@@ -1,5 +1,4 @@
 import { Template } from "./Template";
-import { DinamicBlock } from "./DinamicBlock";
 import { ResultViwer } from "./ResultViwer";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -8,16 +7,18 @@ import ReactDOMServer from 'react-dom/server'
 import { setHtml } from "../../redux/reducers/html.reducer";
 import { Contact } from "./Contact";
 import { Options } from "./Options";
-import React, {  useEffect } from "react";
-// import { useUploadFileMutation } from "../../redux/api/upload/upload.api";
+import React, { useEffect } from "react";
 import { setPage } from "../../redux/reducers/page.reducer";
-const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, sections, site_name, theme }) => {
+import { useSearchParams } from "react-router-dom";
+import { SiteBuilder } from "./Builders/SiteBuilder";
+import { CvBuilder } from "./Builders/CvBuilder";
+import { TextBuilder } from "./Builders/TextBuilder";
+const Sample: React.FC<SampleSiteProps> = ({ contact, links, sections, theme }) => {
     return <html lang="en">
         <head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>{site_name}</title>
-            <meta name="description" content={description} />
+            <title>QRmessage</title>
             <link
                 rel="stylesheet"
                 href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -276,13 +277,12 @@ const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, 
             <header>
                 <nav className="navbar bg-body-tertiary">
                     <div className="container-fluid container_padding">
-
                         <span className="navbar-brand">
                             <img
-                                src={logo}
+                                src={'https://firebasestorage.googleapis.com/v0/b/qr-message-681a3.appspot.com/o/logo-qr.svg?alt=media&token=408cdac6-4d81-4e49-bbc6-1465b28c1759'}
                                 alt="Logo"
-                                width="50"
-                                height="50"
+                                width="80"
+                                height="80"
                                 className="d-inline-block align-text-top"
                             />
                         </span>
@@ -335,38 +335,40 @@ const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, 
                     </div>
                 </div>
             </header>
-            {
-                sections?.map((section, index) => {
-                    if (section.type === "sliders") {
-                        return section.sliders.length !== 0 && <section className="swiper" key={index}>
-                            <div className="swiper-wrapper">
-                                {section?.sliders?.map((slider, sliderIndex) => <div key={sliderIndex} className="swiper-slide">
-                                    <div
-                                        className="swiper-slide-item"
-                                        style={{ backgroundImage: `url(${slider.imageURL})` }}
-                                    >
-                                        <h2 className="swiper-slide-title">{slider.title}</h2>
-                                    </div>
-                                </div>)}
-                            </div>
-                            <div className="swiper-pagination swiper-pagination-slider"></div>
-                        </section>
-                    } else if (section.type === "text") {
-                        return <section className="text_content container_padding">
-                            <h3>{section.title}</h3>
-                            <p style={{ wordBreak: "break-word" }}>{section.content}</p>
-                        </section>
-                    } else if (section.type === "image") {
-                        return <section className="image_text">
-                            <img
-                                src={section.imageURL}
-                                alt="404"
-                            />
-                            <h2 className="image_text-slide-title">{section.content}</h2>
-                        </section>
-                    }
-                })
-            }
+            <main>
+                {
+                    sections?.map((section, index) => {
+                        if (section.type === "sliders") {
+                            return section.sliders.length !== 0 && <section className="swiper" key={index}>
+                                <div className="swiper-wrapper">
+                                    {section?.sliders?.map((slider, sliderIndex) => <div key={sliderIndex} className="swiper-slide">
+                                        <div
+                                            className="swiper-slide-item"
+                                            style={{ backgroundImage: `url(${slider.imageURL})` }}
+                                        >
+                                            <h2 className="swiper-slide-title">{slider.title}</h2>
+                                        </div>
+                                    </div>)}
+                                </div>
+                                <div className="swiper-pagination swiper-pagination-slider"></div>
+                            </section>
+                        } else if (section.type === "text") {
+                            return <section key={index} className="text_content container_padding">
+                                <h3>{section.title}</h3>
+                                <p style={{ wordBreak: "break-word" }}>{section.content}</p>
+                            </section>
+                        } else if (section.type === "image") {
+                            return <section key={index} className="image_text">
+                                <img
+                                    src={section.imageURL}
+                                    alt="404"
+                                />
+                                <h2 className="image_text-slide-title">{section.content}</h2>
+                            </section>
+                        }
+                    })
+                }
+            </main>
             {/* footer  */}
             <footer>
                 <div className="contacts_container">
@@ -411,23 +413,51 @@ const Sample: React.FC<SampleSiteProps> = ({ contact, description, links, logo, 
                         el: '.swiper-pagination',
                         clickable: true,
                     },
-                    });
-                   const links_container=  document.getElementById("links_container")
-                    
-                    
+                    });                    
                     `
             }}
         />
     </html>
 }
-export const ConstructorSite = () => {
-    const sections = useSelector((state: RootState) => state.sections);
+export const useMyChangeEventHook = () => {
+    const dispatch = useDispatch();
     const page = useSelector((state: RootState) => state.page);
+    const html = useSelector((state: RootState) => state.html);
     const contact = useSelector((state: RootState) => state.contact);
     const link = useSelector((state: RootState) => state.link);
-    // const [uploadFile] = useUploadFileMutation();
-    // const logoFileInputRef = useRef<HTMLInputElement>(null)
+    const sections = useSelector((state: RootState) => state.sections);
+    const options = useSelector((state: RootState) => state.options);
+    const renderHtml = async () => {
+        let theme_from_localStorage = localStorage.getItem("theme");
+        if (theme_from_localStorage !== null) {
+            let theme = JSON.parse(theme_from_localStorage) as Theme;
+            let html_code = ReactDOMServer.renderToStaticMarkup(
+                <Sample {...{ ...page, theme, sections: [...sections], contact: { ...contact }, links: [...link] }} />
+            );
+            dispatch(setHtml({ loading: false, content: html_code }));
+        } else {
+            alert("theme is not selected!");
+        }
+    };
+    useEffect(() => {
+        dispatch(setHtml({ ...html, loading: true }));
+        const timer = setTimeout(async () => {
+            renderHtml()
+        }, 1800);
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [page, sections, contact, link]);
+
+    return {};
+};
+
+export const ConstructorSite = () => {
+    const sections = useSelector((state: RootState) => state.sections);
+    useMyChangeEventHook();
     const dispatch = useDispatch();
+    const [searchParams] = useSearchParams()
+    const block_type = searchParams.get("type") || "text";
     useEffect(() => {
         let theme_from_localStorage = localStorage.getItem("theme");
         if (theme_from_localStorage !== null) {
@@ -440,53 +470,33 @@ export const ConstructorSite = () => {
     const onAddSection = () => {
         dispatch(addSection());
     }
-    const onRender = async () => {
-        let theme_from_localStorage = localStorage.getItem("theme");
-        if (theme_from_localStorage !== null) {
-            let theme = JSON.parse(theme_from_localStorage) as Theme;
-            let html_code = ReactDOMServer.renderToStaticMarkup(
-                <Sample {...{ ...page, theme, sections: [...sections], contact: { ...contact }, links: [...link] }} />
-            );
-            dispatch(setHtml(html_code))
-        } else {
-            alert("theme is not selected!")
-        }
-    }
-    // const logoInputsChange = async (e: ChangeEvent<HTMLInputElement>, type: string) => {
-    //     if (type === "logo_file") {
-    //         const formData = new FormData();
-    //         if (e.target.files) {
-    //             formData.append("file", e.target.files[0]);
-    //             const data = await uploadFile(formData);
-    //             if ('data' in data && 'fileURL' in data.data) {
-    //                 dispatch(setPage({ value: data.data.fileURL, field: "logo" }));
-    //                 if (logoFileInputRef.current) {
-    //                     logoFileInputRef.current.value = '';
-    //                 }
-    //             }
-    //         }
-    //     } else if (type === "logo_url") {
-    //         dispatch(setPage({ value: e.target.value, field: "logo" }))
-    //     }
-    // }
     return <main>
         <section className="constructor2__section">
             <div className="container">
                 <Template />
                 <div className="constructor2-container__section">
                     <div className="constructor2-container-left__section">
-                        {sections.map((section, index) => <DinamicBlock key={index} {...section} index={index} />)}
+                        {sections.map((section, index) => {
+                            if (block_type === "blog") {
+                                return <SiteBuilder key={index} {...section} index={index} />
+                            } else if (block_type === "b_card") {
+                                return <CvBuilder key={index} {...section} index={index} />
+                            } else {
+                                return <TextBuilder key={index} {...section} index={index} />
+                            }
+                        })}
                         <div className="constructor2-container-left-block__section">
-                            {sections.length < 10 &&
+                            {sections.length < (block_type === "blog" ? 10 : block_type === "b_card" ? 2 : 0) &&
                                 <button className="btn-add-block" onClick={onAddSection} type="button">Добавить блок</button>
                             }
                         </div>
-                        <Contact />
+                        {(block_type === "blog" || block_type === "b_card") &&
+                            <Contact />
+                        }
                         <Options />
                     </div>
                     <ResultViwer />
                 </div>
-                <button className="btn-add-block w-full lg:!w-[52%] " onClick={onRender} type="button">Предпросмотр</button>
             </div>
         </section >
     </main>

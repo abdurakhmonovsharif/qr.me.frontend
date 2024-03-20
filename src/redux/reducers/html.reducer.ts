@@ -2,14 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const htmlSlice = createSlice({
     name: "html",
-    initialState: "<!DOCTYPE html>",
+    initialState: { content: "<!DOCTYPE html>", loading: false },
     reducers: {
         setHtml: (state, action) => {
-            state = "<!DOCTYPE html>" + action.payload;
+            state.content = "<!DOCTYPE html>" + action.payload.content;
+            state.loading = action.payload.loading
             return state;
         },
         clearHtml: () => {
-            return "<!DOCTYPE html>";
+            return { content: "<!DOCTYPE html>", loading: false };
         },
     },
 });

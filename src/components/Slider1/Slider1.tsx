@@ -34,21 +34,19 @@ export const Slider1 = () => {
           <img src={Crown} alt="img" className="crown" />
         </div>
         <div className="swiper mySwiper1">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide mySwiper1-slide flex gap-6 justify-between">
-              {slider1.map((item, i) => (
-                <div className="section5-block__main" key={i}>
-                  <img src={item.img} alt="img" />
-                  <div className="section5-block-text__main">
-                    <h3>
-                      {item.label}
-                    </h3>
-                    <p>{item.text}</p>
-                    <a>Explore</a>
-                  </div>
+          <div className="mySwiper1-slide flex gap-6 justify-between">
+            {slider1.map((item, i) => (
+              <div className="section5-block__main" key={i}>
+                <img src={item.img} alt="img" />
+                <div className="section5-block-text__main">
+                  <h3>
+                    {item.label}
+                  </h3>
+                  <p>{item.text}</p>
+                  <a>Explore</a>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
           <div className="mySwiper-navigation">
             <div className="swiper-button-prev swiper-button-prev-sample swiper-button-prev1" />

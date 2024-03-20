@@ -1,0 +1,25 @@
+BEGIN:VCARD
+VERSION:3.0
+N;CHARSET=UTF-8:;Name;;;
+FN;CHARSET=UTF-8:Name
+ORG;CHARSET=UTF-8:Company
+TITLE;CHARSET=UTF-8:Title
+item1.TEL;type=Call Us:123 456 7890
+item1.X-ABLabel;CHARSET=UTF-8:Call Us
+item2.EMAIL;type=Email:contactme@domain.com
+item2.X-ABLabel;CHARSET=UTF-8:Email
+item3.ADR;CHARSET=UTF-8:;Street;;City;State;Zipcode;Country
+item3.X-ABLabel;CHARSET=UTF-8:Address
+item3.X-ABADR:country
+item4.URL:https://www.qrcodechimp.com/r/s9krlu0wjdd0
+item4.X-ABLabel;CHARSET=UTF-8:eBusiness Card
+item5.URL:https://www.yourdomain.com
+item5.X-ABLabel;CHARSET=UTF-8:Title
+item6.URL;type=facebook:
+item6.X-ABLabel;CHARSET=UTF-8:Facebook
+item7.URL;type=instagram:
+item7.X-ABLabel;CHARSET=UTF-8:Instagram
+item8.URL;type=twitter:
+item8.X-ABLabel;CHARSET=UTF-8:Twitter
+NOTE;CHARSET=UTF-8:Description
+END:VCARD

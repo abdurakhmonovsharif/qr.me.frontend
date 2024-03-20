@@ -18,7 +18,7 @@ body {
 
 body {
   overflow-x: clip;
-  font-family: "Neue Haas Unica", sans-serif;
+  font-family: 'Neue Haas Unica', sans-serif;
 }
 
 section {
@@ -38,18 +38,18 @@ a {
 }
 input,
 textarea {
-  font-family: "Neue Haas Unica", sans-serif;
+  font-family: 'Neue Haas Unica', sans-serif;
 }
 input::placeholder,
 textarea::placeholder {
-  font-family: "Neue Haas Unica", sans-serif;
+  font-family: 'Neue Haas Unica', sans-serif;
 }
 ul {
   padding: 0;
   margin: 0;
 }
 body {
-  font-family: "Neue Haas Unica", sans-serif;
+  font-family: 'Neue Haas Unica', sans-serif;
   padding: 0;
   margin: 0;
   background: #ffffff;
@@ -288,7 +288,7 @@ button:hover {
 }
 .section4-container-left__main h4 {
   color: #fff;
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   font-size: 48px;
   font-style: normal;
   font-weight: 900;
@@ -299,7 +299,7 @@ button:hover {
   padding-bottom: 30px;
   padding-top: 16px;
   color: #101010;
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -339,7 +339,7 @@ button:hover {
   line-height: 40px; /* 133.333% */
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   opacity: 0.5;
 }
 .section4-container-left-block__main {
@@ -354,7 +354,7 @@ button:hover {
 }
 .btn-get-start {
   color: #fff;
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -377,10 +377,13 @@ button:hover {
 header {
   width: 100%;
   background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 .section1-container-left__main h1 {
   color: #333;
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   font-size: 56px;
   font-style: normal;
   font-weight: 900;
@@ -429,7 +432,7 @@ header {
   align-items: center;
   justify-content: center;
   color: #5ec3c5;
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -534,7 +537,7 @@ header {
 .section5-top__main h4 {
   color: #333;
   text-align: center;
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   font-size: 48px;
   font-style: normal;
   font-weight: 900;
@@ -572,7 +575,7 @@ header {
   padding-top: 24px;
 }
 .section5-block-text__main p {
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -588,7 +591,7 @@ header {
 }
 .section5-block-text__main a {
   color: #fff;
-  font-feature-settings: "clig" off, "liga" off;
+  font-feature-settings: 'clig' off, 'liga' off;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -1013,13 +1016,13 @@ header {
   outline: none;
 }
 .menu__btn > span::before {
-  content: "";
+  content: '';
   top: -10px;
   transition: 0.3s;
   right: 0;
 }
 .menu__btn > span::after {
-  content: "";
+  content: '';
   top: 10px;
   transition: 0.3s;
   right: 0;
@@ -1150,8 +1153,9 @@ header {
   line-height: 24px; /* 150% */
   letter-spacing: 0.16px;
 }
-.section-container-block-text__constructor1 a {
+.section-container-block-text__constructor1 button {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
@@ -1196,7 +1200,7 @@ footer {
   border-top: 1px solid #d9d9d9;
   margin-top: 10px;
   overflow: hidden;
-  font-feature-settings: "liga" off;
+  font-feature-settings: 'liga' off;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1486,7 +1490,7 @@ footer {
 
 /* создание в label псевдоэлемента before со следующими стилями */
 .custom-checkbox + label::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1882,6 +1886,19 @@ header {
   font-weight: 500;
   line-height: 24px; /* 150% */
 }
+.modal_input{
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #e7e7e1;
+  background: #fcfcf9;
+  width: 100%;
+  height: 64px;
+  color: #22252d;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
 .section-container-left__make-order {
   max-width: 640px;
 }
@@ -1933,7 +1950,7 @@ header {
 
 /* создание в label псевдоэлемента  before со следующими стилями */
 .custom-radio + label::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 24px;
   height: 24px;

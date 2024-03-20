@@ -3,20 +3,16 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 const pageSlice = createSlice({
     name: "page",
     initialState: {
-        description: "",
-        logo: "",
-        password: "",
-        site_name: "",
-        type: "site",
+        type: "blog",
         view_count: 0,
-        site_link: "", qr_code: "",
+        qr_code: "",
         theme: "",
-        userId: ""
+        userId: "",
     } as Page,
     reducers: {
-        setPage: (state, action: PayloadAction<{ value: string|object, field: keyof Page }>) => {
+        setPage: (state, action: PayloadAction<{ value: string | object | number, field: keyof Page }>) => {
             const { field, value } = action.payload;
-            if (typeof (value) === "string") {
+            if (typeof (value) === "string" || typeof (value) === "number") {
                 return {
                     ...state,
                     [field]: value
@@ -30,15 +26,11 @@ const pageSlice = createSlice({
         },
         clearPage: () => {
             return {
-                description: "",
-                logo: "",
-                password: "",
-                site_name: "",
                 type: "site",
                 view_count: 0,
+                qr_code: "",
                 theme: "",
                 userId: "",
-                site_link: "", qr_code: ""
             };
         },
     },

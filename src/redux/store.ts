@@ -10,18 +10,20 @@ import pageReducer from "./reducers/page.reducer";
 import contactReducer from "./reducers/contact.reducer";
 import linkReducer from "./reducers/link.reducer";
 import { upload } from "./api/upload/upload.api";
+import optionsReducer from "./reducers/options.reducer";
 export const store = configureStore({
     reducer: {
         [auth.reducerPath]: auth.reducer,
         [theme.reducerPath]: theme.reducer,
         [page.reducerPath]: page.reducer,
-        [upload.reducerPath]:upload.reducer,
+        [upload.reducerPath]: upload.reducer,
         user: userReducer,
         sections: sectionsReducer,
         html: htmlReducer,
         page: pageReducer,
         contact: contactReducer,
         link: linkReducer,
+        options: optionsReducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(auth.middleware).concat(page.middleware).concat(theme.middleware).concat(upload.middleware)

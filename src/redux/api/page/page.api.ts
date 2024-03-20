@@ -8,8 +8,8 @@ export const page = createApi({
         getPages: builder.query<Page[], void>({
             query: () => "pages",
         }),
-        getPageByUserId: builder.query<Page, string>({
-            query: (id) => `pages?user_id=${id}`,
+        getPageByUserId: builder.query<PageDinamicSiteResponse, string>({
+            query: (id) => `pages/ws/${id}`,
         }),
         createPage: builder.mutation<Page, Partial<Page>>({
             query: (page) => ({
@@ -53,4 +53,4 @@ export const page = createApi({
     }),
 });
 
-export const { useGetPagesQuery,usePublishPageMutation, useGetPageByUserIdQuery, useCreatePageMutation, useUpdatePageMutation, useDeletePageMutation } = page;
+export const { useGetPagesQuery, usePublishPageMutation, useGetPageByUserIdQuery, useCreatePageMutation, useUpdatePageMutation, useDeletePageMutation } = page;

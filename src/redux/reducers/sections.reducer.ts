@@ -4,16 +4,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const sectionsSlice = createSlice({
     name: "sections",
     initialState: [{
-        type: "sliders",
-        imageURL: "",
-        title: "",
-        content: "",
-        sliders: [{ imageURL: "", title: "" }],
-    }, {
         type: "text",
         imageURL: "",
-        title: "",
-        content: "",
+        title: "Title",
+        content: "Your content",
         sliders: [{ imageURL: "", title: "" }],
     }] as Section[],
     reducers: {

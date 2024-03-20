@@ -36,24 +36,22 @@ export const Slider2 = () => {
           <img src={Message} alt="img" />
         </div>
         <div className="swiper mySwiper2">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide mySwiper2-slide flex justify-between">
-              {slider2.map((item, i) => (
-                <div className="section6-block__main" key={i}>
-                  <div className="section6-block-content__main">
-                    <p>{item.body}</p>
-                  </div>
-                  {item.icon}
-                  <div className="section6-block-human__main">
-                    <div className="section6-block-human-img__main">
-                      <img src={item.img} alt="img" />
-                    </div>
-                    <p>{item.name}</p>
-                    <span>{item.job}</span>
-                  </div>
+          <div className=" mySwiper2-slide flex justify-between">
+            {slider2.map((item, i) => (
+              <div className="section6-block__main" key={i}>
+                <div className="section6-block-content__main">
+                  <p>{item.body}</p>
                 </div>
-              ))}
-            </div>
+                {item.icon}
+                <div className="section6-block-human__main">
+                  <div className="section6-block-human-img__main">
+                    <img src={item.img} alt="img" />
+                  </div>
+                  <p>{item.name}</p>
+                  <span>{item.job}</span>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="mySwiper-navigation">
             <div className="swiper-button-prev swiper-button-prev-sample swiper-button-prev2" />

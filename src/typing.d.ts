@@ -3,6 +3,28 @@ type User = {
     email: string;
     name: string;
     password?: string;
+    active: boolean;
+    block: boolean;
+    last_online: string;
+    url:string;
+}
+type PageDinamicSiteResponse={
+    theme:Theme,
+    links:Link[],
+    sections:Section[],
+    id?: string;
+    qr_code: string;
+    view_count: number;
+    type: string;
+    theme?: string;
+    userId?: string;
+    end_date: string;
+    password_edit: string;
+    password_view: string;
+    max_view_count: number;
+    max_edit_count: number;
+    user:User,
+    contact:Contact,
 }
 type Theme = {
     id?: string;
@@ -10,24 +32,23 @@ type Theme = {
     font_family: string;
     color: string;
 }
+type Options = {
+    end_date: string;
+    password_edit: string;
+    password_view: string;
+    max_view_count: number;
+    max_edit_count: number;
+}
 type Page = {
     id?: string;
-    site_link: string;
-    site_name: string;
-    logo: string;
-    description: string;
     qr_code: string;
     view_count: number;
-    password: string;
     type: string;
     theme?: string;
     userId?: string;
 }
+
 type CreatePageDto = {
-    site_link: string;
-    site_name: string;
-    logo: string;
-    description: string;
     qr_code: string;
     view_count: number;
     password: string;
@@ -39,14 +60,10 @@ type CreatePageDto = {
     contact: Contact
 }
 type SampleSiteProps = {
-    site_link: string;
-    site_name: string;
-    logo: string;
-    description: string;
     sections: Section[];
     contact: Contact;
     links: Links[],
-    theme:Theme
+    theme: Theme
 }
 type Section = {
     id?: string;

@@ -1,0 +1,7 @@
+BEGIN:VCARD
+    VERSION:3.0
+    FN:your fullname
+    TEL;TYPE=WORK;VOICE:your phone number
+    EMAIL:your email
+    URL:http://localhost:8080/api/ws/dd7af535-9d27-42ee-9239-81a20f57e09a
+    
