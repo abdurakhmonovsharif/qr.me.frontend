@@ -426,7 +426,6 @@ export const useMyChangeEventHook = () => {
     const contact = useSelector((state: RootState) => state.contact);
     const link = useSelector((state: RootState) => state.link);
     const sections = useSelector((state: RootState) => state.sections);
-    const options = useSelector((state: RootState) => state.options);
     const renderHtml = async () => {
         let theme_from_localStorage = localStorage.getItem("theme");
         if (theme_from_localStorage !== null) {

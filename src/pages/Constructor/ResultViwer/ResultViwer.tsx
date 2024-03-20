@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import iphone from '../../../assets/img/iPhone X2.png'
 import { useCreatePageMutation } from "../../../redux/api/page/page.api";
-import { useUploadFileMutation } from "../../../redux/api/upload/upload.api";
 import { MyModal } from "../../../helpers/MyModal";
 import HtmlLoader from "../../../helpers/HtmlLoader";
-import { toast } from "react-toastify";
 import { notify } from "../../../helpers/notify";
 import Spinner from "../../../helpers/Spinner";
-import { BASE_URL, CLIENT_BASE_URL } from '../../../redux/api/base.api';
+import {  CLIENT_BASE_URL } from '../../../redux/api/base.api';
 import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
 import { clearContact } from "../../../redux/reducers/contact.reducer";

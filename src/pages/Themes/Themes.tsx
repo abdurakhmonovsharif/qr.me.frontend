@@ -73,9 +73,7 @@ const PasswordModal: React.FC<{ show: boolean, toogleModal: () => void, theme: T
 
 export const Themes = () => {
     const { data, isLoading } = useGetThemesQuery();
-    const [loginModal, setLoginModal] = useState(false)
     const [registerModal, setRegisterModal] = useState(false)
-    const navigate = useNavigate();
     const [selectedTheme, setSelectedTheme] = useState<Theme | null>(null);
     const navigateToCreatePage = (theme: Theme) => {
         setRegisterModal(true)

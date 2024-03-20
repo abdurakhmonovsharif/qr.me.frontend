@@ -5,7 +5,7 @@ import { useUploadFileMutation } from "../../../../redux/api/upload/upload.api";
 import { Constructon_icon4, Constructon_icon5, Upload_icon } from "../../../../utils/icons";
 import { types } from "../SiteBuilder";
 
-export const CvBuilder: React.FC<Section> = ({ content, imageURL, sliders, title, type, index }) => {
+export const CvBuilder: React.FC<Section> = ({ content, imageURL,  title, type, index }) => {
     const dispatch = useDispatch();
     const [uploadFile] = useUploadFileMutation()
     const imageInputRef = useRef<HTMLInputElement>(null)

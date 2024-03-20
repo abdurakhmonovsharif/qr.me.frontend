@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { setSections } from '../../../../redux/reducers/sections.reducer';
 
-export const TextBuilder: React.FC<Section> = ({ content, imageURL, sliders, title, type, index }) => {
+export const TextBuilder: React.FC<Section> = ({ content, title,  index }) => {
     
     const dispatch = useDispatch();
     const onChangeInputs = (value: string, field: keyof Section, slideIndex?: number, slideInputType?: keyof Slider) => {
