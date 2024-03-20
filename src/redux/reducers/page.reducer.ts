@@ -26,7 +26,7 @@ const pageSlice = createSlice({
         },
         clearPage: () => {
             return {
-                type: "site",
+                type: "blog",
                 view_count: 0,
                 qr_code: "",
                 theme: "",
