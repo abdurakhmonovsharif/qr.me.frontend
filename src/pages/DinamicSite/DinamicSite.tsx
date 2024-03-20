@@ -144,7 +144,6 @@ export default function DinamicSite() {
                                         }
                                     })}
 
-
                                 </> : data?.type === "b_card" ?
                                     <>
                                         {data.sections.map((section) => {
@@ -155,7 +154,7 @@ export default function DinamicSite() {
                                                 </section>
                                             } else if (section.type === "image") {
                                                 return <section className="image_text max-h-[460px] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${section.imageURL})` }}>
-                                                    <h2 style={{ color: data?.theme.color }} className="line-clamp-2 px-7">{section.content}</h2>
+                                                    <h2 className="line-clamp-2 px-7">{section.content}</h2>
                                                 </section>
                                             }
                                         })}
