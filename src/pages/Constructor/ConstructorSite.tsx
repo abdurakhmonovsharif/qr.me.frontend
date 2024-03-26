@@ -7,12 +7,14 @@ import ReactDOMServer from 'react-dom/server'
 import { setHtml } from "../../redux/reducers/html.reducer";
 import { Contact } from "./Contact";
 import { Options } from "./Options";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { setPage } from "../../redux/reducers/page.reducer";
 import { useSearchParams } from "react-router-dom";
 import { SiteBuilder } from "./Builders/SiteBuilder";
 import { CvBuilder } from "./Builders/CvBuilder";
 import { TextBuilder } from "./Builders/TextBuilder";
+import { MyModal } from "../../helpers/MyModal";
+import { useCheckEditPasswordMutation } from "../../redux/api/page/page.api";
 const Sample: React.FC<SampleSiteProps> = ({ contact, links, sections, theme }) => {
     return <html lang="en">
         <head>
@@ -452,10 +454,14 @@ export const useMyChangeEventHook = () => {
 };
 
 export const ConstructorSite = () => {
+    const user = JSON.parse(localStorage.getItem("user") as string);
+    const [passwordInput, setPassowordInput] = useState("")
+    const [openEdit, setOpenEdit] = useState(localStorage.getItem("openEdit") as unknown as boolean || false)
     const sections = useSelector((state: RootState) => state.sections);
     useMyChangeEventHook();
     const dispatch = useDispatch();
     const [searchParams] = useSearchParams()
+    const [checkPassword] = useCheckEditPasswordMutation()
     const block_type = searchParams.get("type") || "text";
     useEffect(() => {
         let theme_from_localStorage = localStorage.getItem("theme");
@@ -469,7 +475,42 @@ export const ConstructorSite = () => {
     const onAddSection = () => {
         dispatch(addSection());
     }
+    const loginEditPassword = async () => {
+        const page = user.page;
+        if (page) {
+            const response = await checkPassword({ id: page.id, password: passwordInput });
+            if ('data' in response) {
+                localStorage.setItem("openEdit", response.data as unknown as string);
+                setOpenEdit(response.data);
+            }
+        }
+    }
+
     return <main>
+        {
+            (user && user.page) &&
+            <MyModal header={false} toogleModal={() => { }} show={!openEdit} footer={<div className="flex items-center justify-end p-3 border-t border-solid border-blueGray-200 rounded-b">
+                <button
+                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={loginEditPassword}
+                >
+                    вход
+                </button>
+            </div>}>
+                <>
+                    <h3 className="head-h3 text-center">Введите пароль для редактирования</h3>
+                    <h3 className="font-medium text-lg ml-1  text-[#111827]">Пароль</h3>
+                    <input
+                        onChange={(e) => setPassowordInput(e.target.value)}
+                        value={passwordInput}
+                        placeholder="**********************"
+                        type="password"
+                        className="modal_input mt-1"
+                    />
+                </>
+            </MyModal>
+        }
         <section className="constructor2__section">
             <div className="container">
                 <Template />

@@ -8,7 +8,7 @@ export const Template = () => {
     useEffect(() => {
         const template_type = searchParams.get("type") || "";
         const user = JSON.parse(localStorage.getItem("user") as string) as any;
-        if (localStorage.getItem("user") == null) navigate("/themes");
+        if (localStorage.getItem("user") == null) navigate("/");
         const user_plan = user.plan.name as string;
         if (!user_plan.includes(template_type)) {
             navigate(`?type=${user.plan.name}`)

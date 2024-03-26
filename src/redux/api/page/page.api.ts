@@ -21,6 +21,16 @@ export const page = createApi({
                 },
             })
         }),
+        checkEditPassword: builder.mutation<boolean, { id: string, password: string }>({
+            query: ({ id, password }) => ({
+                url: `pages/check_edit_password/${id}`,
+                method: "POST",
+                body: { password },
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+            })
+        }),
         publishPage: builder.mutation<any, Partial<FormData>>({
             query: (formData) => ({
                 url: 'publish',
@@ -53,4 +63,4 @@ export const page = createApi({
     }),
 });
 
-export const { useGetPagesQuery, usePublishPageMutation, useGetPageByUserIdQuery, useCreatePageMutation, useUpdatePageMutation, useDeletePageMutation } = page;
+export const { useGetPagesQuery, usePublishPageMutation, useGetPageByUserIdQuery, useCheckEditPasswordMutation, useCreatePageMutation, useUpdatePageMutation, useDeletePageMutation } = page;

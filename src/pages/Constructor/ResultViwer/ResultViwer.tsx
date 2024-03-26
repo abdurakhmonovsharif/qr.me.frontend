@@ -7,7 +7,7 @@ import { MyModal } from "../../../helpers/MyModal";
 import HtmlLoader from "../../../helpers/HtmlLoader";
 import { notify } from "../../../helpers/notify";
 import Spinner from "../../../helpers/Spinner";
-import {  CLIENT_BASE_URL } from '../../../redux/api/base.api';
+import { CLIENT_BASE_URL } from '../../../redux/api/base.api';
 import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
 import { clearContact } from "../../../redux/reducers/contact.reducer";
@@ -79,7 +79,7 @@ export const ResultViwer = () => {
                 </button>
             </div>
         </div>
-        <MyModal show={show} toogleModal={(bool) => setShow(bool)} title={'Страница создана!'} footer={<div className="flex items-center justify-end p-3 border-t border-solid border-blueGray-200 rounded-b">
+        <MyModal show={show} header={true} toogleModal={(bool) => setShow(bool)} title={'Страница создана!'} footer={<div className="flex items-center justify-end p-3 border-t border-solid border-blueGray-200 rounded-b">
             <button
                 className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
